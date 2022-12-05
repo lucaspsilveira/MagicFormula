@@ -5,6 +5,51 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Fórmula mágica</h1>
+    <div>
+        <table class="table table-striped table-responsive-lg">
+            <thead>
+                <th>
+                    Ticker
+                </th>
+                <th>
+                    Nome da empresa
+                </th>
+                <th>
+                    Preço atual
+                </th>
+                <th>
+                    ROE
+                </th>
+                <th>
+                    PL
+                </th>
+                <th>
+                    Ranking rentabilidade
+                </th>
+                <th>
+                    Ranking Preço
+                </th>
+                <th>
+                    Ranking final
+                </th>
+            </thead>
+            <tbody>
+                @foreach (var stock in Model.ScoredStocksData)
+                {
+                    <tr>
+                        <td>@stock.ticker</td>
+                        <td>@stock.companyName</td>
+                        <td>@stock.price</td>
+                        <td>@stock.roe</td>
+                        <td>@stock.p_L</td>
+                        <td>@stock.RentabilidadeRanking</td>
+                        <td>@stock.PrecoRanking</td>
+                        <td>@stock.PosicaoFinal</td>
+                    </tr>
+                }
+            </tbody>
+            
+        </table>
+    </div>
 </div>
